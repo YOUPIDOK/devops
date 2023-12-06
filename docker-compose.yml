@@ -6,22 +6,22 @@ services:
       file: ./compose/compose.db.yml
       service: devops-db
 
-  # devops-nginx:
-  #   extends:
-  #     file: compose/compose.nginx.yml
-  #     service: devops-nginx
+  devops-nginx:
+    extends:
+      file: compose/compose.nginx.yml
+      service: devops-nginx
 
-  # devops-api:
-  #   extends:
-  #     file: compose/compose.api.yml
-  #     service: devops-api
-  #   depends_on:
-  #     - devops-db
+  devops-api:
+    extends:
+      file: compose/compose.api.yml
+      service: devops-api
+    depends_on:
+      - devops-db
 
-  # devops-newman:
-  #   extends:
-  #     file: compose/compose.newman.yml
-  #     service: devops-newman
+  devops-newman:
+    extends:
+      file: compose/compose.newman.yml
+      service: devops-newman
 
 networks:
   default:
