@@ -11,6 +11,8 @@ services:
       - MYSQL_PASSWORD=${DB__PASSWORD}
       - MYSQL_ROOT_PASSWORD=${DB__ROOT_PASSWORD}
       - MYSQL_DATABASE=${DB__NAME}
+    ports:
+      - "3306:3306"
 
 networks:
   default:
