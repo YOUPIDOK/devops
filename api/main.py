@@ -11,17 +11,20 @@ db_password = os.environ.get('DB_PASSWORD', 'password')
 db_database = 'iterator-db'
 
 class DatabaseHandler:
+    def get_connection():
+        return mysql.connector.connect(
+            host=db_host,
+            port=db_port,
+            user=db_user,
+            password=db_password,
+            database=db_database
+        )
+            
     def get_iterator_value():
         try:
-            conn = mysql.connector.connect(
-                host=db_host,
-                port=db_port,
-                user=db_user,
-                password=db_password,
-                database=db_database
-            )
+            conn = DatabaseHandler.get_connection()
             cursor = conn.cursor()
-            cursor.execute('SELECT state FROM interator ORDER BY id DESC LIMIT 1')
+            cursor.execute('SELECT state FROM interator')
             result = cursor.fetchone()
             conn.close()
             return result[0] if result else 0
@@ -31,15 +34,9 @@ class DatabaseHandler:
 
     def update_iterator_value(value):
         try:
-            conn = mysql.connector.connect(
-                host=db_host,
-                port=db_port,
-                user=db_user,
-                password=db_password,
-                database=db_database
-            )
+            conn = DatabaseHandler.get_connection()
             cursor = conn.cursor()
-            cursor.execute('INSERT INTO interator (state) VALUES (%s)', (value,))
+            cursor.execute('UPDATE interator SET state = state + %s', (value,))
             conn.commit()
             conn.close()
         except mysql.connector.Error as err:
