@@ -22,3 +22,9 @@ docker compose build
 ```shell
 docker compose up -d
 ```
+
+## Containers
+- devops-nginx
+- devops-db
+- devops-api
+- devops-newman

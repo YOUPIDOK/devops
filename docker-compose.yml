@@ -18,6 +18,11 @@ services:
 #    depends_on:
 #      - devops-db
 
+  devops-newman:
+    extends:
+      file: compose/compose.newman.yml
+      service: devops-newman
+
 networks:
   default:
     external: true

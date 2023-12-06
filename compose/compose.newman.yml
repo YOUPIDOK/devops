@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  devops-newman:
+    build:
+      context:    ../newman
+      dockerfile: Dockerfile
+    container_name: devops-newman
+
+networks:
+  default:
+    external: true
+    name: devops-network
