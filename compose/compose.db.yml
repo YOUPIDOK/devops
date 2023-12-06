@@ -12,8 +12,6 @@ services:
       - MYSQL_PASSWORD=${DB__PASSWORD}
       - MYSQL_ROOT_PASSWORD=${DB__ROOT_PASSWORD}
       - MYSQL_DATABASE=iterator-db
-    ports:
-      - "3306:3306"
 
 networks:
   default:

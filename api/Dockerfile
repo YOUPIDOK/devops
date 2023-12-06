@@ -1,5 +1,5 @@
 # Utilisation de l'image Python 3.8
-FROM python:3.8
+FROM python:3.8-alpine
 
 # Définition du répertoire de travail
 WORKDIR /app
