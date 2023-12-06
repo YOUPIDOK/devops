@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  devops-db:
+    extends:
+      file:    ./compose/compose.db.yml
+      service: devops-db
+
+networks:
+  default:
+    external: true
+    name: devops-network
