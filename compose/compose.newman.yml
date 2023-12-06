@@ -3,7 +3,7 @@ version: '3.8'
 services:
   devops-newman:
     build:
-      context:    ../db
+      context:    ../newman
       dockerfile: Dockerfile
     container_name: devops-newman
 
