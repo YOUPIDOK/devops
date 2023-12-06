@@ -1,16 +1,18 @@
-version: '3.8'
+version: "3.8"
 
 services:
   devops-db:
     build:
-      context:    ../db
+      context: ../db
       dockerfile: Dockerfile
     container_name: devops-db
     environment:
-      - MYSQL_USER= ${DB__USER}
-      - MYSQL_PASSWORD= ${DB__PASSWORD}
-      - MYSQL_ROOT_PASSWORD= ${DB__ROOT_PASSWORD}
-      - MYSQL_DATABASE=iterator-db
+      - MYSQL_USER=${DB__USER}
+      - MYSQL_PASSWORD=${DB__PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB__ROOT_PASSWORD}
+      - MYSQL_DATABASE=${DB__NAME}
+    ports:
+      - ${DB__PORT}:3306
 
 networks:
   default:

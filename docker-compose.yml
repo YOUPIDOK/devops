@@ -1,22 +1,22 @@
-version: '3.8'
+version: "3.8"
 
 services:
   devops-db:
     extends:
-      file:    ./compose/compose.db.yml
+      file: ./compose/compose.db.yml
       service: devops-db
 
-  devops-nginx:
-    extends:
-      file: compose/compose.nginx.yml
-      service: devops-nginx
+  #  devops-nginx:
+  #    extends:
+  #      file: compose/compose.nginx.yml
+  #      service: devops-nginx
 
-#  devops-api:
-#    extends:
-#      file: compose/compose.api.yml
-#      service: devops-api
-#    depends_on:
-#      - devops-db
+  devops-api:
+    extends:
+      file: compose/compose.api.yml
+      service: devops-api
+    depends_on:
+      - devops-db
 
 networks:
   default:

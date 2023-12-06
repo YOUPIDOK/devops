@@ -4,6 +4,8 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 # Récupérer les informations de connexion à la base de données depuis les variables d'environnement
+api_port = os.environ.get('API_PORT', '8000')
+
 db_host = os.environ.get('DB_HOST', 'localhost')
 db_port = os.environ.get('DB_PORT', '3306')
 db_user = os.environ.get('DB_USER', 'root')
@@ -92,7 +94,7 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.encode('utf-8'))
 
 def run():
-    server_address = ('127.0.0.1', 8000)
+    server_address = ('127.0.0.1', api_port)
     httpd = HTTPServer(server_address, RequestHandler)
     print('Serveur HTTP démarré sur 127.0.0.1:8000...')
     httpd.serve_forever()

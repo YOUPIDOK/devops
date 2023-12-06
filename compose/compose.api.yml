@@ -1,11 +1,20 @@
-version: '3.8'
+version: "3.8"
 
 services:
   devops-api:
     build:
-      context:    ../
+      context: ../api
       dockerfile: Dockerfile
     container_name: devops-api
+    environment:
+      - PORT=${API_PORT}
+      - DB_HOST=devops-db
+      - DB_PORT=${DB__PORT}
+      - DB_USER=${DB__USER}
+      - DB_PASSWORD=${DB__PASSWORD}
+      - DB_DATABASE=${DB__NAME}
+    ports:
+      - ${API_PORT}:${API_PORT}
 
 networks:
   default:
