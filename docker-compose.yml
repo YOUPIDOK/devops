@@ -6,6 +6,18 @@ services:
       file:    ./compose/compose.db.yml
       service: devops-db
 
+  devops-nginx:
+    extends:
+      file: compose/compose.nginx.yml
+      service: devops-nginx
+
+#  devops-api:
+#    extends:
+#      file: compose/compose.api.yml
+#      service: devops-api
+#    depends_on:
+#      - devops-db
+
 networks:
   default:
     external: true
