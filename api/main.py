@@ -25,7 +25,6 @@ class DatabaseHandler:
             conn = DatabaseHandler.get_connection()
             cursor = conn.cursor()
             cursor.execute('SELECT state FROM interator')
-            print(cursor.fetchall())
             result = cursor.fetchone()
             conn.close()
             return result[0] if result else 0
