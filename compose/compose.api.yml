@@ -6,6 +6,7 @@ services:
       context: ../api
       dockerfile: Dockerfile
     container_name: devops-api
+    hostname: devops-api
     environment:
       - DB_HOST=devops-db
       - DB_PORT=3306

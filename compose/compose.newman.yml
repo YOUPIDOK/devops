@@ -6,6 +6,7 @@ services:
       context: ../newman
       dockerfile: Dockerfile
     container_name: devops-newman
+    hostname: devops-newman
 
 networks:
   default:
