@@ -7,9 +7,9 @@ services:
       dockerfile: Dockerfile
     container_name: devops-newman
     hostname: devops-newman
-    command: run /collection.json --environment /env.json
+    command: run /test.json --environment /env.json
     volumes:
-      - ../newman/collection.json:/collection.json
+      - ../newman/test.json:/test.json
       - ../newman/env.json:/env.json
 
 networks:
