@@ -1,4 +1,4 @@
 # Devops
-> Étudiant
+> Étudiants
 >  - STEVENOT Léo
 >  - PONCET Nathan
