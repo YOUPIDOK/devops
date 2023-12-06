@@ -92,9 +92,9 @@ class RequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(response.encode('utf-8'))
 
 def run():
-    server_address = ('127.0.0.1', 8000)
+    server_address = ('0.0.0.0', 8000)
     httpd = HTTPServer(server_address, RequestHandler)
-    print('Serveur HTTP démarré sur 127.0.0.1:8000...')
+    print('Serveur HTTP démarré sur 0.0.0.0:8000...')
     httpd.serve_forever()
 
 if __name__ == '__main__':

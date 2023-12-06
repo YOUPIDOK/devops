@@ -11,7 +11,6 @@ services:
       - DB_PORT=3306
       - DB_USER=${DB__USER}
       - DB_PASSWORD=${DB__PASSWORD}
-      - DB_DATABASE=${DB__NAME}
     ports:
       - 8000:8000
 
