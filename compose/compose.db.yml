@@ -11,8 +11,6 @@ services:
       - MYSQL_PASSWORD=${DB__PASSWORD}
       - MYSQL_ROOT_PASSWORD=${DB__ROOT_PASSWORD}
       - MYSQL_DATABASE=${DB__NAME}
-    ports:
-      - ${DB__PORT}:3306
 
 networks:
   default:
