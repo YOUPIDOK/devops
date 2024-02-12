@@ -2,7 +2,7 @@
 >  - STEVENOT Léo
 >  - PONCET Nathan
 
-# Installation
+## Installation
 **Config environement variables**
 ```shell
 cp .env.example .env
