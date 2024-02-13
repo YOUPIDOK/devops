@@ -3,7 +3,12 @@
 >  - PONCET Nathan
 
 ## Installation
+```shell
+ansible-playbook ansible/build.yml -i ansible/inventories/integration  
+```
+
 **Config environement variables**
+
 ```shell
 cp .env.example .env
 ```
