@@ -3,6 +3,16 @@
 - name: Build and deploy the application using Docker Compose
   hosts: localhost
   tasks:
+    - name: Ensure Python pip is installed
+      ansible.builtin.package:
+        name:  python3-pip
+        state: present
+
+    - name: Install specific version of Docker SDK for Python
+      ansible.builtin.pip:
+        name:  docker==6.1.3
+        state: present
+
     - name: Check if Docker Desktop is running
       ansible.builtin.command: pgrep -f docker
       register: docker_check
