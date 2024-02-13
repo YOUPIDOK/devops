@@ -1,4 +1,0 @@
-- name: 'Build et up docker'
-  hosts: localhost
-  roles:
-    - docker
