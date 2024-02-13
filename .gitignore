@@ -1,5 +1,5 @@
 .idea/
 .env
 .vscode
-#.DS_STORE
-#.tool-versions
+.DS_STORE
+.tool-versions
