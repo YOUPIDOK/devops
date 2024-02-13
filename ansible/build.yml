@@ -18,7 +18,6 @@
         state: present
         driver: bridge
 
-
     - name: Build and start the Docker Compose application
       docker_compose:
         project_src: "{{playbook_dir}}/../"

@@ -3,12 +3,13 @@
 >  - PONCET Nathan
 
 ## Installation
+### With ansible
 ```shell
 ansible-playbook ansible/build.yml -i ansible/inventories/integration  
 ```
+### With docker
 
 **Config environement variables**
-
 ```shell
 cp .env.example .env
 ```
@@ -28,8 +29,8 @@ docker compose build
 docker compose up -d
 ```
 
-## Containers
-- devops-nginx
+## Containers create in "devops-network"
+- devops-nginx 
 - devops-db
 - devops-api
 - devops-newman
