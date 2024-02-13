@@ -4,10 +4,13 @@
 
 ## Installation
 ### With ansible
+> Build and up docker-container with ansible config
 ```shell
 ansible-playbook ansible/build.yml -i ansible/inventories/integration  
 ```
+
 ### With docker
+> Build and up docker-container with .env config
 
 **Config environement variables**
 ```shell
