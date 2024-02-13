@@ -12,6 +12,13 @@
       ansible.builtin.command: open -a Docker
       when: docker_check.rc != 0
 
+    - name: Créer le réseau Docker pour l'application DevOps
+      docker_network:
+        name: devops-network
+        state: present
+        driver: bridge
+
+
     - name: Build and start the Docker Compose application
       docker_compose:
         project_src: "{{playbook_dir}}/../"
