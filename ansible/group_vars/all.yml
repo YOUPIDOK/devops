@@ -1,0 +1,6 @@
+nginx_listen_port: 80
+nginx_proxy_pass_host: devops-api
+nginx_proxy_pass_port: 8000
+env_db_user: user
+env_db_password: password
+env_db_root_password: password

@@ -1,0 +1,6 @@
+- name: Configure servers
+  hosts: localhost
+
+  roles:
+    - env
+    - nginx

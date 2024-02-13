@@ -1,0 +1,10 @@
+server {
+    listen {{ nginx_listen_port }};
+    server_name localhost;
+
+    location / {
+        proxy_pass http://{{ nginx_proxy_pass_host }}:{{ nginx_proxy_pass_port }};
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}

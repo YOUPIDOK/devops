@@ -1,0 +1,19 @@
+- import_playbook: "{{playbook_dir}}/configure.yml"
+
+- name: Build and deploy the application using Docker Compose
+  hosts: localhost
+  tasks:
+    - name: Check if Docker Desktop is running
+      ansible.builtin.command: pgrep -f docker
+      register: docker_check
+      failed_when: docker_check.rc != 0
+
+    - name: Start Docker Desktop if it is not running
+      ansible.builtin.command: open -a Docker
+      when: docker_check.rc != 0
+
+    - name: Build and start the Docker Compose application
+      docker_compose:
+        project_src: "{{playbook_dir}}/../"
+        build: yes
+        state: present
