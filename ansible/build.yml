@@ -5,12 +5,12 @@
   tasks:
     - name: Ensure Python pip is installed
       ansible.builtin.package:
-        name:  python3-pip
+        name: python3-pip
         state: present
 
     - name: Install specific version of Docker SDK for Python
       ansible.builtin.pip:
-        name:  docker==6.1.3
+        name: docker==6.1.3
         state: present
 
     - name: Check if Docker Desktop is running
@@ -33,3 +33,18 @@
         project_src: "{{playbook_dir}}/../"
         build: yes
         state: present
+
+    # Ajout de la logique d'attente pour le conteneur devops-newman
+    - name: Waiting for the devops-newman container to terminate
+      community.docker.docker_container_info:
+        name: devops-newman
+      register: newman_info
+      until: newman_info.container.State.Status == "exited"
+      retries: 60
+      delay: 10
+      ignore_errors: true
+
+    - name: Check whether the devops-newman container has been successfully exited
+      fail:
+        msg: "The devops-newman container did not terminate correctly with exit code {{ newman_info.container.State.ExitCode }}"
+      when: newman_info.exists and newman_info.container.State.ExitCode != 0
