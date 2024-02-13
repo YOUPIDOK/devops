@@ -8,10 +8,10 @@ services:
     container_name: devops-api
     hostname: devops-api
     environment:
-      - DB_HOST=devops-db
-      - DB_PORT=3306
-      - DB_USER=${DB_USER}
-      - DB_PASSWORD=${DB_PASSWORD}
+      - DB__HOST=devops-db
+      - DB__PORT=3306
+      - DB__USER=${DB__USER}
+      - DB__PASSWORD=${DB__PASSWORD}
 
 networks:
   default:

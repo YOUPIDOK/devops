@@ -4,10 +4,10 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 # Récupérer les informations de connexion à la base de données depuis les variables d'environnement
-db_host = os.environ.get('DB_HOST', 'localhost')
-db_port = os.environ.get('DB_PORT', '3306')
-db_user = os.environ.get('DB_USER', 'root')
-db_password = os.environ.get('DB_PASSWORD', 'password')
+db_host = os.environ.get('DB__HOST', 'localhost')
+db_port = os.environ.get('DB__PORT', '3306')
+db_user = os.environ.get('DB__USER', 'root')
+db_password = os.environ.get('DB__PASSWORD', 'password')
 db_database = 'iterator-db'
 
 class DatabaseHandler:

@@ -30,7 +30,22 @@ docker compose up -d
 ```
 
 ## Containers create in "devops-network"
-- devops-nginx 
-- devops-db
-- devops-api
-- devops-newman
+
+**devops-db**
+- Mysql 8.2
+- No exposed ports
+
+**devops-api**
+- Python API 
+- Python 3.8
+- Default port : 8000
+- No exposed ports
+
+**devops-nginx**
+- Nginx 3.18
+- Reverse proxy 80 -> devops-api:8000
+- Port 80 exposed
+
+**devops-newman**
+- Newman 6
+- No exposed ports

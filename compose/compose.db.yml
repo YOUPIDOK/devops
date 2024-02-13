@@ -8,9 +8,9 @@ services:
     container_name: devops-db
     hostname: devops-db
     environment:
-      - MYSQL_USER=${DB_USER}
-      - MYSQL_PASSWORD=${DB_PASSWORD}
-      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_USER=${DB__USER}
+      - MYSQL_PASSWORD=${DB__PASSWORD}
+      - MYSQL_ROOT_PASSWORD=${DB__ROOT_PASSWORD}
       - MYSQL_DATABASE=iterator-db
 
 networks:

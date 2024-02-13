@@ -2,11 +2,13 @@ version: "3.8"
 
 services:
   devops-nginx:
-    image: nginx:stable-alpine-slim
+    image: nginx:alpine3.18
     container_name: devops-nginx
     hostname: devops-nginx
     volumes:
       - ../nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - ${API__PUBLIC_PORT}:80
 
 networks:
   default:
